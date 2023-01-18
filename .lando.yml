@@ -1,0 +1,54 @@
+name: gh-timeline
+recipe: lemp
+config:
+  php: '8.1'
+  composer_version: '2.5.1'
+  webroot: public
+  database: .lando/mysql.cnf
+  # php: .lando/php.ini
+  # Keep it empty, to enable xdebug use `lando xdebug <xdebug mode>` instead
+  xdebug: ""
+services:
+  appserver:
+    build_as_root:
+      - apt update
+      - apt install cron -y
+    run_as_root:
+      - service cron start
+    run:
+      - crontab /app/cron.txt
+  database:
+    volumes:
+      mariadb: { }
+    type: compose
+    creds:
+      user: rtcamp
+      password: rtcamp
+      database: gh-timeline
+    services:
+      image: mariadb:latest
+      command: docker-entrypoint.sh mariadbd
+      volumes:
+        - mariadb:/var/lib/mysql
+      environment:
+        MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: 1
+        MARIADB_DATABASE: gh-timeline
+        MYSQL_DATABASE: gh-timeline
+        MARIADB_USER: rtcamp
+        MARIADB_PASSWORD: rtcamp
+  mailhog:
+    type: mailhog
+    portforward: false
+    hogfrom:
+      - appserver
+tooling:
+  xdebug:
+    description: Loads Xdebug in the selected mode.
+    cmd:
+      - appserver: /app/.lando/xdebug.sh
+    user: root
+  enable-cron:
+    description: Starts cron job in the appserver container
+    cmd:
+      - appserver: service cron start
+    user: root
