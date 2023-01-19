@@ -1,7 +1,30 @@
-# php-starter
+# GitHub Timeline assignment
 
-If you are reading this in your assignment repo, please read [assignment submission guidelines](https://learn.rtcamp.com/campus/php-assignments/guidelines/) before proceeding.
+This is a GitHub timeline subscription. User with subscription will get latest update of GitHub timeline after every 5 minutes.
 
-Then make sure to replace content of the file with information relevant to your assignment. 
+## Installation
 
-Writing your own README.md file is required anyway as per [assignment submission guidelines](https://learn.rtcamp.com/campus/php-assignments/guidelines/).
+- `lando start` to deploy the docker containter and bring the project live. This command also show the URLs for different sevices like nginx appserver, mailhog, and mariadb. Use those URLs to get live demo.
+- `lando destroy` to delete the docker containter.
+
+## Progress
+
+- [ ] Backend
+    - [x] Database Connection
+    - [x] Subscribe
+    - [ ] Token verification
+    - [ ] Unsubscribe
+    - [ ] Fetch GitHub timeline latest update
+    - [ ] Cron job to send emails
+    - [ ] Write email template
+
+- [ ] Frontend
+    - [ ] Subscribe page
+    - [ ] Unsubscribe page
+    - [ ] Token verification page
+
+## About us
+
+Name: Utsav ladani \
+Company: rtCamp \
+Project: GitHub Timeline assignment
