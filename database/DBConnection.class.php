@@ -20,7 +20,7 @@ class DBConnection {
 
             // for dynamic testing
             $this->create_table();
-            $this->truncate_table();
+            // $this->truncate_table();
         }
 
     }
@@ -58,7 +58,17 @@ class DBConnection {
         return $this->db->affected_rows>0;
     }
 
-    public function saveToken($email, $token) {
+    public function getToken($email) {
+        $sql = "SELECT * FROM User Where Email='$email' AND Token<>'';";
+        $result = $this->db->query($sql);
+
+        if($result->num_rows==0) return "";
+
+        $arr = $result->fetch_array();
+        return $arr['Token'];
+    }
+
+    public function setToken($email, $token) {
         $sql = "UPDATE User SET Token='$token' WHERE Email='$email';";
         $result = $this->db->query($sql);
 

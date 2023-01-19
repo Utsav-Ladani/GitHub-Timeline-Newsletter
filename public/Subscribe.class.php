@@ -23,7 +23,6 @@ class Subscriber extends DBConnection {
 
         $result = parent::isUserExist($email);
         if($result) {
-            echo "Hi";
             $result = parent::setName($name, $email);
             if($result) return "Your name is not updated!";
         }
@@ -32,9 +31,11 @@ class Subscriber extends DBConnection {
             if(!$result) return "User not added!";
         }
 
-        $token = $this->generate_and_save_token($email);
-        if(!$token) return "Verification email not generated.";
-
+        $token = parent::getToken($email);
+        if(!$token) {
+            $token = $this->generate_and_save_token($email);
+            if(!$token) return "Verification token is not generated.";
+        }
 
         $result = $this->send_email($name, $email, $token);
         if(!$result) return "Failed to send email.";
@@ -46,7 +47,7 @@ class Subscriber extends DBConnection {
     private function validate_name($name) {
         if($name == "") return "Name is empty";
 
-        $name_pattern = "/^[a-zA-Z0-1]+$/";
+        $name_pattern = "/^[a-zA-Z0-9]+$/";
         if(!preg_match($name_pattern, $name)) return "Name must contain only lower chars, upper chars and numbers";
 
         if(strlen($name)>100) return "Name length must be less than 100 char.";
@@ -69,7 +70,7 @@ class Subscriber extends DBConnection {
         $bytes = random_bytes(20);
         $token = bin2hex($bytes);
         
-        $result = parent::saveToken($email, $token);
+        $result = parent::setToken($email, $token);
 
         if(!$result) return "";
 
