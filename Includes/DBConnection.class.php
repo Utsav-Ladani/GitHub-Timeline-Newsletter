@@ -37,11 +37,18 @@ class DBConnection {
         return $result;
     }
 
-    public function checkUserStatus($email) {
+    public function getUserStatus($email) {
         $sql = "SELECT * FROM User Where Email='$email' AND IsVerified;";
         $result = $this->db->query($sql);
 
         return $result->num_rows>0;
+    }
+
+    public function setUserStatus($email) {
+        $sql = "UPDATE User SET IsVerified=true WHERE Email='$email';";
+        $result = $this->db->query($sql);
+
+        return $this->db->affected_rows>0;
     }
 
     public function isUserExist($email) {

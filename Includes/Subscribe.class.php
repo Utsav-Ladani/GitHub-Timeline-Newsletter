@@ -18,7 +18,7 @@ class Subscriber extends DBConnection {
         $result = $this->validate_email($email);
         if($result) return $result;
 
-        $result = parent::checkUserStatus($email);
+        $result = parent::getUserStatus($email);
         if($result) return "You already subscribe GitHub Timeline.";
 
         $result = parent::isUserExist($email);
@@ -61,7 +61,7 @@ class Subscriber extends DBConnection {
         $result = filter_var($email, FILTER_VALIDATE_EMAIL);
         if(!$result) return "Invalid Email";
         
-        if(strlen($email)>200) return "Name length must be less than 200 char.";
+        if(strlen($email)>200) return "Email length must be less than 200 char.";
 
         return "";
     }
