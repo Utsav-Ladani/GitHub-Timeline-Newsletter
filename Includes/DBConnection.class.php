@@ -37,6 +37,13 @@ class DBConnection {
         return $result;
     }
 
+    public function deleteUser($email) {
+        $sql = "DELETE FROM User WHERE Email='$email';";
+        $result = $this->db->query($sql);
+
+        return $this->db->affected_rows>0;
+    }
+
     public function getUserStatus($email) {
         $sql = "SELECT * FROM User Where Email='$email' AND IsVerified;";
         $result = $this->db->query($sql);

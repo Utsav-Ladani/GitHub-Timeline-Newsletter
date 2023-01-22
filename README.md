@@ -12,8 +12,8 @@ This is a GitHub timeline subscription. User with subscription will get latest u
 - [ ] Backend
     - [x] Database Connection
     - [x] Subscribe
-    - [ ] Token verification
-    - [ ] Unsubscribe
+    - [x] Token verification
+    - [x] Unsubscribe
     - [ ] Fetch GitHub timeline latest update
     - [ ] Cron job to send emails
     - [ ] Write email template

@@ -1,16 +1,16 @@
 <?php
 
-class Verification extends DBConnection{
+class Unsubscriber extends DBConnection {
     const TOKEN_LEN = 40;
+    
     public $error = "";
-
     public function __construct($email, $token) {
         parent::__construct();
 
-        $this->error = $this->verify($email, $token);
+        $this->error = $this->unsubscribe($email, $token);
     }
 
-    private function verify($email, $token) {
+    private function unsubscribe($email, $token) {
         $result = $this->validate_email($email);
         if($result) return $result;
 
@@ -18,15 +18,12 @@ class Verification extends DBConnection{
         if($result) return $result;
 
         $token_from_db = parent::getToken($email);
-        if(!$token_from_db) return "Token not found in database";
+        if(!$token_from_db) return "User with this token not found in database";
 
-        if($token_from_db !== $token) return "Verification token not matched.";
+        if($token_from_db !== $token) return "Token not matched.";
 
-        $result = parent::getUserStatus($email);
-        if($result) return "Your email is already verified.";
-
-        $result = parent::setUserStatus($email);
-        if(!$result) return "Email verification failed!"; 
+        $result = parent::deleteUser($email);
+        if(!$result) return "Unsubscription failed!";
 
         return "";
     }

@@ -69,6 +69,7 @@ class Subscriber extends DBConnection {
     private function generate_and_save_token($email) {
         $bytes = random_bytes(20);
         $token = bin2hex($bytes);
+        echo $token;
         
         $result = parent::setToken($email, $token);
 
