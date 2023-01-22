@@ -1,6 +1,6 @@
 <?php
 
-require_once './Subscribe.class.php';
+require_once '../Includes/Subscribe.class.php';
 
 $subscriber = new Subscriber("UtsavLadani", "utsav.ladani@rtcamp.com");
 $subscriber = new Subscriber("UtsavLadani1", "utsav.ladani1@rtcamp.com");
