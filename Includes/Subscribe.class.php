@@ -69,7 +69,6 @@ class Subscriber extends DBConnection {
     private function generate_and_save_token($email) {
         $bytes = random_bytes(20);
         $token = bin2hex($bytes);
-        echo $token;
         
         $result = parent::setToken($email, $token);
 
@@ -81,7 +80,7 @@ class Subscriber extends DBConnection {
 
     private function send_email($name, $email, $token) {
         $subject = "Confirm it's you";
-        $message = "Hello $name, \nPlease use this link to verify your email.\nhttps://gh-timeline.lndo.site/verify.php?Email=$email&&token=$token";
+        $message = "Hello $name, \nPlease use this link to verify your email.\nhttps://gh-timeline.lndo.site/verify.php?email=$email&&token=$token";
         return mail($email, $subject, $message);
     }
 }

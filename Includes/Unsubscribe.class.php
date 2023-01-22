@@ -1,5 +1,7 @@
 <?php
 
+require_once '../Includes/DBConnection.class.php';
+
 class Unsubscriber extends DBConnection {
     const TOKEN_LEN = 40;
     
@@ -29,7 +31,7 @@ class Unsubscriber extends DBConnection {
     }
 
     private function validate_email($email) {
-        if($email == "") return "Email is empty";
+        if($email == "") return "Email required!";
 
         $result = filter_var($email, FILTER_VALIDATE_EMAIL);
         if(!$result) return "Invalid Email";
@@ -40,7 +42,7 @@ class Unsubscriber extends DBConnection {
     }
 
     private function validate_token($token) {
-        if($token == "") return "Token is empty";
+        if($token == "") return "Token required!";
 
         $result = ctype_xdigit($token);
         if(!$result) return "Invalid token!";

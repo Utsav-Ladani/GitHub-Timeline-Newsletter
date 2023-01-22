@@ -1,18 +1,43 @@
 <?php
 
 require_once '../Includes/Subscribe.class.php';
-require_once '../Includes/Verification.class.php';
-require_once '../Includes/Unsubscribe.class.php';
 
-// $subscriber = new Subscriber("UtsavLadani", "utsav.ladani@rtcamp.com");
-// $subscriber = new Subscriber("UtsavLadani1", "utsav.ladani1@rtcamp.com");
-// $subscriber = new Subscriber("UtsavLadani2", "utsav.ladani2@rtcamp.com");
-$subscriber = new Subscriber("UtsavLadani3", "utsav.ladani3@rtcamp.com");
-echo "<emp>".$subscriber->error."</emp>";
+$error = "";
+$success = 0;
 
-// $verifier = new Verification("utsav.ladani3@rtcamp.com", "?");
-// echo "<emp>".$verifier->error."</emp>";
+if(isset($_POST['subscribe'])) {
+    $name = isset($_POST['name']) ? $_POST['name'] : "";
+    $email = isset($_POST['email']) ? $_POST['email'] : "";
 
-// $unsubscriber = new Unsubscriber("utsav.ladani3@rtcamp.com", "?");
-// echo "<emp>".$unsubscriber->error."</emp>";
+    $subscriber = new Subscriber($name, $email);
+    $error = $subscriber->error;
+    $success = $error=="";
+}
 
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscribe to GitHub Timeline</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <?php 
+        if($error) { 
+            echo '<div class="error">'.$error.'</div>';
+        } 
+        else if($success) { 
+            echo '<div class="success">Email verification link is send to your device.</div>';
+        } 
+    ?>
+    <form action="#" method="post">
+        <h1 class="title">Subscribe to GitHub Timeline</h1>
+        <input type="text" name="name" id="name" placeholder="Name"/>
+        <input type="email" name="email" id="email" placeholder="Email" />
+        <button type="submit" name="subscribe">Subscribe</button>
+    </form>
+</body>
+</html>
