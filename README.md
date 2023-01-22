@@ -19,9 +19,9 @@ This is a GitHub timeline subscription. User with subscription will get latest u
     - [ ] Write email template
 
 - [ ] Frontend
-    - [ ] Subscribe page
-    - [ ] Unsubscribe page
-    - [ ] Token verification page
+    - [x] Subscribe page
+    - [x] Unsubscribe page
+    - [x] Token verification page
 
 ## About us
 
