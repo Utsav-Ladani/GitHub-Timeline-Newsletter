@@ -1,18 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GitHub Timeline update</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        main {
+            width: 100%;
+            padding: 10px;
+            background-color: whitesmoke;
+            display: grid;
+            row-gap: 10px;
+        }
+
+        .list {
+            padding: 0 10px;
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            justify-self: center;
+        }
+
+        .list-item {
+            margin: 10px 0;
+            padding: 10px;
+            border: solid 1px rgb(194, 192, 192);
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .title {
+            margin: 10px 0;
+        }
+
+        .published,
+        .updated {
+            color: gray;
+            font-size: small;
+        }
+    </style>
 </head>
+
 <body>
     <main>
-        <h4>Hello {{name}},</h4>
-        <ul>
+        <p>Hello {{name}},</p>
+        <p>Please look at the latest github timeline update.</p>
+        <ul class="list">
             {{content}}
         </ul>
-        <a href="https://gh-timeline.lndo.site/unsubscribe.php?email={{email}}&&token={{token}}">Unsubscribe</a>
+        <p>
+            <a href="https://gh-timeline.lndo.site/unsubscribe.php?email={{email}}&&token={{token}}">Unsubscribe</a> GitHub Timeline update.
+        </p>
     </main>
 </body>
+
 </html>
