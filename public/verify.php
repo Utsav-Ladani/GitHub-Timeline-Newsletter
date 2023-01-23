@@ -1,6 +1,6 @@
 <?php
 
-require_once '../Includes/Verification.class.php';
+require_once '../includes/Verification.class.php';
 
 $error = "";
 $success = 0;

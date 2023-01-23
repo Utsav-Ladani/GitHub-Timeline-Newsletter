@@ -89,6 +89,13 @@ class DBConnection {
         return $this->db->affected_rows>0;
     }
 
+    public function getUsersWithSubscription() {
+        $sql = "SELECT * FROM User Where IsVerified=true;";
+        $result = $this->db->query($sql);
+
+        return $result;
+    }
+
     private function create_table() {
         $sql = "CREATE TABLE IF NOT EXISTS User ( 
             Name VARCHAR(100) NOT NULL, 

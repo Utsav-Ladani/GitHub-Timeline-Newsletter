@@ -1,6 +1,6 @@
 <?php
 
-require_once '../Includes/DBConnection.class.php';
+require_once '../includes/DBConnection.class.php';
 
 class Subscriber extends DBConnection {
     public $error = "";
@@ -71,8 +71,7 @@ class Subscriber extends DBConnection {
         $token = bin2hex($bytes);
         
         $result = parent::setToken($email, $token);
-
-        if(!$result) return "";
+        if(!$result) return "Token is not saved.";
 
         return $token;
 
