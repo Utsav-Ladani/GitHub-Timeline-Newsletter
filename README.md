@@ -9,7 +9,7 @@ This is a GitHub timeline subscription. User with subscription will get latest u
 
 ## Progress
 
-- [ ] Backend
+- [x] Backend
     - [x] Database Connection
     - [x] Subscribe
     - [x] Token verification
@@ -18,15 +18,15 @@ This is a GitHub timeline subscription. User with subscription will get latest u
     - [x] Cron job to send emails
     - [x] Write email template
 
-- [ ] Frontend
+- [x] Frontend
     - [x] Subscribe page
     - [x] Unsubscribe page
     - [x] Token verification page
 
-- [ ] Improvements
-    - [ ] Make UI more beautiful
-    - [ ] Add namespace
-    - [ ] Write documentation
+- [x] Improvements
+    - [x] Make UI more beautiful
+    - [x] Add namespace
+    - [x] Write documentation
 
 ## About us
 

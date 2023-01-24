@@ -3,7 +3,7 @@
 require_once '/app/includes/EmailSender.class.php';
 
 // send email to every user
-$email_sender = new EmailSender();
+$email_sender = new EmailSender\EmailSender();
 $result = $email_sender->run_email_sender();
 
 // new log start indicator
