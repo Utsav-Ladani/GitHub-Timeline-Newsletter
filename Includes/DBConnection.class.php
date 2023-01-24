@@ -69,7 +69,7 @@ class DBConnection {
         $sql = "UPDATE User SET Name='$name' WHERE Email='$email';";
         $result = $this->db->query($sql);
 
-        return $this->db->affected_rows>0;
+        return $result;
     }
 
     public function getToken($email) {

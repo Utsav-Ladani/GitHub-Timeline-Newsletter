@@ -21,9 +21,11 @@ $success = $error=="";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verify your email</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/log.style.css">
 </head>
 <body>
+    <div class="logo"></div>
+    <p class="description"> Verify it's you :) </div>
     <?php
         if($error) { 
             echo '<div class="error">'.$error.'</div>';

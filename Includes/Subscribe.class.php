@@ -24,7 +24,7 @@ class Subscriber extends DBConnection {
         $result = parent::isUserExist($email);
         if($result) {
             $result = parent::setName($name, $email);
-            if($result) return "Your name is not updated!";
+            if(!$result) return "Your name is not updated!";
         }
         else {
             $result = parent::addUser($name, $email);

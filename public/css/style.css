@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    min-width: 1000px;
+    min-height: 700px;
+    background-color: aliceblue;
+    display: grid;
+    place-items: center;
+}
+
+main {
+    box-shadow: 0 0 10px 5px rgb(233, 233, 233);
+    padding: 0 50px;
+    width: 55%;
+    height: 70vh;
+    max-width: 900px;
+    max-height: 600px;
+    min-width: 700px;
+    min-height: 500px;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    background-color: white;
+    border: none;
+    border-radius: 8px;
+    position: relative;
+}
+
+.logo {
+    background-image: url("../assets/github-mark.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    row-gap: 20px;
+}
+
+form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.input-wrapper {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    border: solid 1px gray;
+    border-radius: 4px;
+    background-color: #edeeef;
+    overflow: hidden;
+}
+
+.input-wrapper > i {
+    padding: 0 20px;
+}
+
+input {
+    height: 100%;
+    padding: 12px;
+    border: none;
+    font-size: large;
+}
+
+input:focus {
+    outline: none;
+}
+
+button {
+    padding: 12px;
+    border: solid 1px #2da44e;
+    border-radius: 4px;
+    color: white;
+    background-color: #2da44e;
+    font-size: large;
+}
+
+button:hover {
+    background-color: #19943c;
+}
+
+.error, .success {
+    height: fit-content;
+    position: absolute;
+    inset: 20px 20px;
+    padding: 10px;
+    color: tomato;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.success {
+    color: #2da44e;
+}
