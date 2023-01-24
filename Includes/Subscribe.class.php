@@ -1,6 +1,6 @@
 <?php
 
-require_once '../includes/DBConnection.class.php';
+require_once __DIR__.'/DBConnection.class.php';
 
 class Subscriber extends DBConnection {
     public $error = "";

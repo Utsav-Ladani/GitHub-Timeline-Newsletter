@@ -1,6 +1,7 @@
 <?php
 
-require_once '../includes/DataFetcher.class.php';
+require_once __DIR__.'/DataFetcher.class.php';
+require_once __DIR__.'/DBConnection.class.php';
 
 class EmailSender extends DBConnection {
     private $data = NULL;
@@ -12,16 +13,16 @@ class EmailSender extends DBConnection {
         $this->data = $this->fetch_data();
         if(!$this->data) return "Data is not fetched.";
 
-        $this->gh_template = $this->get_template("../template/gh_timeline.html");
+        $this->gh_template = $this->get_template(__DIR__."/../template/gh_timeline.html");
         if(!$this->gh_template) return "Can't be able to open template.";
 
-        $this->gh_card_template = $this->get_template("../template/gh_timeline_card.html");
+        $this->gh_card_template = $this->get_template(__DIR__."/../template/gh_timeline_card.html");
         if(!$this->gh_card_template) return "Can't be able to open template.";
 
         $this->embed_gh_timeline_update();
 
         $result = $this->send_emails();
-        if(!$result) return "Can't be able to send emails.";
+        if($result) return "Can't be able to send emails.";
 
         return "";
     }

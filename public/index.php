@@ -1,7 +1,7 @@
 <?php
 
-require_once '../includes/Subscribe.class.php';
-require_once '../includes/EmailSender.class.php';
+require_once __DIR__.'/../includes/Subscribe.class.php';
+require_once __DIR__.'/../includes/EmailSender.class.php';
 
 $error = "";
 $success = 0;
@@ -14,11 +14,6 @@ if(isset($_POST['subscribe'])) {
     $error = $subscriber->error;
     $success = $error=="";
 }
-
-$es = new EmailSender();
-$result = $es->run_email_sender();
-if(!$result) echo "Error";
-
 
 ?>
 <!DOCTYPE html>

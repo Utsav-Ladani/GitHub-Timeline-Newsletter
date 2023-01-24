@@ -1,6 +1,6 @@
 <?php
 
-require_once '../includes/Unsubscribe.class.php';
+require_once __DIR__.'/../includes/Unsubscribe.class.php';
 
 $error = "";
 $success = 0;

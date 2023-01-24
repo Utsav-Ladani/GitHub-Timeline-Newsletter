@@ -1,6 +1,6 @@
 <?php
 
-require_once '../includes/DBConnection.class.php';
+require_once __DIR__.'/DBConnection.class.php';
 
 class Unsubscriber extends DBConnection {
     const TOKEN_LEN = 40;

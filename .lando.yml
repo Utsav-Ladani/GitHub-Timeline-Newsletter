@@ -5,7 +5,8 @@ config:
   composer_version: '2.5.1'
   webroot: public
   database: .lando/mysql.cnf
-  # php: .lando/php.ini
+  config:
+    php: .lando/php.ini
   # Keep it empty, to enable xdebug use `lando xdebug <xdebug mode>` instead
   xdebug: ""
 services:
