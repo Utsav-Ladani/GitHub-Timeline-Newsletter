@@ -10,7 +10,6 @@ require_once __DIR__.'/DBConnection.class.php';
 class EmailSender extends \DBConn\DBConnection {
     private $data = NULL;
     private $gh_template = "";
-    private $gh_card_template = "";
     private $gh_timeline_html = "";
 
     /**
@@ -24,10 +23,6 @@ class EmailSender extends \DBConn\DBConnection {
         // fetch main html email template 
         $this->gh_template = $this->get_template(__DIR__."/../template/gh_timeline.html");
         if(!$this->gh_template) return "Can't be able to open template.";
-
-        // fetch html data template
-        $this->gh_card_template = $this->get_template(__DIR__."/../template/gh_timeline_card.html");
-        if(!$this->gh_card_template) return "Can't be able to open template.";
 
         // embed data in template
         $this->embed_gh_timeline_update();
@@ -59,18 +54,8 @@ class EmailSender extends \DBConn\DBConnection {
         $gh_cards = "";
 
         foreach($gh_data as $data) {
-            // create a copy of data card template
-            $gh_card = $this->gh_card_template;
-
-            // replace keywords with respected data
-            $gh_card = str_replace('{{published}}', $data['published'], $gh_card);
-            $gh_card = str_replace('{{updated}}', $data['updated'], $gh_card);
-            $gh_card = str_replace('{{href}}', $data['href'], $gh_card);
-            $gh_card = str_replace('{{title}}', $data['title'], $gh_card);
-            $gh_card = str_replace('{{author_name}}', $data['author_name'], $gh_card);
-            $gh_card = str_replace('{{author_uri}}', $data['author_uri'], $gh_card);
-
-            $gh_cards .= $gh_card;
+            // add html content of data
+            $gh_cards .= "<li>".$data['content']."</li>";
         }
 
         // put all data card into main html template

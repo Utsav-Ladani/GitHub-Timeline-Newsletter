@@ -63,6 +63,7 @@ class DataFetcher {
         $data["title"] = $json_data["title"];
         $data["author_name"] = $json_data["author"]["name"];
         $data["author_uri"] = $json_data["author"]["uri"];
+        $data["content"] = $json_data["content"];
 
         return $data;
     }

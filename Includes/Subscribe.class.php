@@ -119,7 +119,9 @@ class Subscriber extends \DBConn\DBConnection {
      */
     private function send_email($name, $email, $token) {
         $subject = "Confirm it's you";
-        $message = "Hello $name, \nPlease use this link to verify your email.\nhttps://gh-timeline.lndo.site/verify.php?email=$email&&token=$token";
+
+        $http_host = isset($_SERVER["HTTP_HOST"]) ? $_SERVER["HTTP_HOST"] : "";
+        $message = "Hello $name, \nPlease use this link to verify your email.\nhttps://$http_host/verify.php?email=$email&&token=$token";
         return mail($email, $subject, $message);
     }
 }
