@@ -14,14 +14,19 @@ This is a GitHub timeline subscription. User with subscription will get latest u
     - [x] Subscribe
     - [x] Token verification
     - [x] Unsubscribe
-    - [ ] Fetch GitHub timeline latest update
-    - [ ] Cron job to send emails
-    - [ ] Write email template
+    - [x] Fetch GitHub timeline latest update
+    - [x] Cron job to send emails
+    - [x] Write email template
 
 - [ ] Frontend
     - [x] Subscribe page
     - [x] Unsubscribe page
     - [x] Token verification page
+
+- [ ] Improvements
+    - [ ] Make UI more beautiful
+    - [ ] Add namespace
+    - [ ] Write documentation
 
 ## About us
 
