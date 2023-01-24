@@ -13,7 +13,7 @@ if (isset($_POST['subscribe'])) {
     $email = isset($_POST['email']) ? $_POST['email'] : "";
 
     // run subscription script to get verification email
-    $subscriber = new Subscriber($name, $email);
+    $subscriber = new Subscribe\Subscriber($name, $email);
     $error = $subscriber->error;
     $success = $error == "";
 }

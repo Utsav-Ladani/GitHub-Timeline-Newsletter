@@ -1,4 +1,5 @@
 <?php
+namespace DBConn;
 
 /** 
  * DBConnection is used to create a database connection. It provides varoius data manipulation functions.
@@ -14,7 +15,7 @@ class DBConnection {
     protected $db = NULL;
 
     public function __construct() {
-        $conn = new mysqli($this->hostname, $this->username, $this->password, $this->database);
+        $conn = new \mysqli($this->hostname, $this->username, $this->password, $this->database);
 
         if($conn->connect_error) {
             die("Failed to connect with database! ". $conn->connect_error);

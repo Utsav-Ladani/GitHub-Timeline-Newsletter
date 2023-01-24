@@ -1,4 +1,5 @@
 <?php
+namespace EmailSender;
 
 require_once __DIR__.'/DataFetcher.class.php';
 require_once __DIR__.'/DBConnection.class.php';
@@ -6,7 +7,7 @@ require_once __DIR__.'/DBConnection.class.php';
 /**
  * Send email to every subscriber
  */
-class EmailSender extends DBConnection {
+class EmailSender extends \DBConn\DBConnection {
     private $data = NULL;
     private $gh_template = "";
     private $gh_card_template = "";
@@ -42,7 +43,7 @@ class EmailSender extends DBConnection {
      * fetch data from github.com/timeline and convert it into json format
      */
     private function fetch_data() {
-        $data_fetcher = new DataFetcher();
+        $data_fetcher = new \DataFetcher\DataFetcher();
         $result = $data_fetcher->getData();
 
         return $result;

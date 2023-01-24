@@ -1,4 +1,5 @@
 <?php
+namespace Unsubscribe;
 
 require_once __DIR__.'/DBConnection.class.php';
 
@@ -6,7 +7,7 @@ require_once __DIR__.'/DBConnection.class.php';
  * @description This class is used to unsunscribe user from GitHub timeline newsletter
  */
 
-class Unsubscriber extends DBConnection {
+class Unsubscriber extends \DBConn\DBConnection {
     const TOKEN_LEN = 40;
     
     public $error = "";

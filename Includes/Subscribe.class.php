@@ -1,12 +1,14 @@
 <?php
+namespace Subscribe;
 
 require_once __DIR__.'/DBConnection.class.php';
+
 
 /**
  * @description Subscribe the GitHUb timeline newsletter
  */
 
-class Subscriber extends DBConnection {
+class Subscriber extends \DBConn\DBConnection {
 
     public $error = "";
     public function __construct($name, $email) {

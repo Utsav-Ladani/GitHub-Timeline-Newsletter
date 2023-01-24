@@ -11,7 +11,7 @@ $email = isset($_GET["email"]) ? $_GET["email"] : "";
 $token = isset($_GET["token"]) ? $_GET["token"] : "";
 
 // verify if token and email match
-$verification = new Verification($email, $token);
+$verification = new Verification\Verification($email, $token);
 $error = $verification->error;
 $success = $error=="";
 

@@ -1,11 +1,12 @@
 <?php
+namespace Verification;
 
 require_once __DIR__.'/DBConnection.class.php';
 
 /**
  * @description Verify the given email and token pair
  */
-class Verification extends DBConnection{
+class Verification extends \DBConn\DBConnection{
     const TOKEN_LEN = 40;
     public $error = "";
 

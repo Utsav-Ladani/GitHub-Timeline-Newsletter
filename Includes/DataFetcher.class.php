@@ -1,4 +1,5 @@
 <?php
+namespace DataFetcher;
 
 /**
  * Fetch data from githic.om/timeline and convert it into json format
