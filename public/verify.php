@@ -2,12 +2,15 @@
 
 require_once __DIR__.'/../includes/Verification.class.php';
 
+// init status variables
 $error = "";
 $success = 0;
 
+// check email and token present in url or not
 $email = isset($_GET["email"]) ? $_GET["email"] : "";
 $token = isset($_GET["token"]) ? $_GET["token"] : "";
 
+// verify if token and email match
 $verification = new Verification($email, $token);
 $error = $verification->error;
 $success = $error=="";
@@ -27,6 +30,7 @@ $success = $error=="";
     <div class="logo"></div>
     <p class="description"> Verify it's you :) </div>
     <?php
+        // show error or success status
         if($error) { 
             echo '<div class="error">'.$error.'</div>';
         } 

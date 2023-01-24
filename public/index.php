@@ -3,13 +3,16 @@
 require_once __DIR__ . '/../includes/Subscribe.class.php';
 require_once __DIR__ . '/../includes/EmailSender.class.php';
 
+// init status variables
 $error = "";
 $success = 0;
 
+//run if form is submitted
 if (isset($_POST['subscribe'])) {
     $name = isset($_POST['name']) ? $_POST['name'] : "";
     $email = isset($_POST['email']) ? $_POST['email'] : "";
 
+    // run subscription script to get verification email
     $subscriber = new Subscriber($name, $email);
     $error = $subscriber->error;
     $success = $error == "";
@@ -35,6 +38,7 @@ echo "";
 <body>
     <main>
         <?php
+        // show error or success
         if ($error) {
             echo '<div class="error">' . $error . '</div>';
         } else if ($success) {

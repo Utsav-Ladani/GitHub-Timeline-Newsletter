@@ -2,12 +2,15 @@
 
 require_once __DIR__.'/../includes/Unsubscribe.class.php';
 
+// init status variables
 $error = "";
 $success = 0;
 
+// check email and token present in url or not
 $email = isset($_GET["email"]) ? $_GET["email"] : "";
 $token = isset($_GET["token"]) ? $_GET["token"] : "";
 
+// unsubscribe if token and email match
 $unsubscriber = new Unsubscriber($email, $token);
 $error = $unsubscriber->error;
 $success = $error=="";
@@ -27,6 +30,7 @@ $success = $error=="";
     <div class="logo"></div>
     <p class="description"> Sorry to say you bye :(</div>
     <?php
+        // show error or success status
         if($error) { 
             echo '<div class="error">'.$error.'</div>';
         } 
