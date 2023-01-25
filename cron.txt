@@ -1,1 +1,1 @@
-* * * * * /usr/local/bin/php /app/cron_jobs/email_sender.php >> /app/cron_email_sender.log 2>&1
+*/5 * * * * /usr/local/bin/php /app/cron_jobs/email_sender.php >> /app/cron_email_sender.log 2>&1
