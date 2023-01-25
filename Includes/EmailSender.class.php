@@ -110,7 +110,8 @@ class EmailSender extends \DBConn\DBConnection {
         $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
         // run loop on the datat to embed it in email template
-        while($data = $result->fetch_array()) {
+        $data = $result->fetch_array();
+        while($data) {
             $name = $data['Name'];
             $email = $data['Email'];
             $token = $data['Token'];
@@ -119,6 +120,8 @@ class EmailSender extends \DBConn\DBConnection {
             //send an email
             $status = mail($email, $subject, $message, $headers);
             if(!$status) return "Failed to send an email to $email";
+
+            $data = $result->fetch_array();
         }
 
         return "";
