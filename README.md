@@ -92,6 +92,7 @@ This is a GitHub timeline newsletter. Anyone can subscribe this newsletter and w
 │   ├── Subscribe.class.php
 │   ├── Unsubscribe.class.php
 │   └── Verification.class.php
+├── init.log
 ├── phpcs.xml
 ├── public
 │   ├── assets
@@ -103,6 +104,8 @@ This is a GitHub timeline newsletter. Anyone can subscribe this newsletter and w
 │   ├── index.php
 │   ├── unsubscribe.php
 │   └── verify.php
+├── scripts
+│   └── init.php
 └── template
     └── gh_timeline.html
 ```

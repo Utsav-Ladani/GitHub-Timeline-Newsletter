@@ -16,6 +16,7 @@
 │   ├── Subscribe.class.php
 │   ├── Unsubscribe.class.php
 │   └── Verification.class.php
+├── init.log
 ├── phpcs.xml
 ├── public
 │   ├── assets
@@ -27,5 +28,7 @@
 │   ├── index.php
 │   ├── unsubscribe.php
 │   └── verify.php
+├── scripts
+│   └── init.php
 └── template
     └── gh_timeline.html
