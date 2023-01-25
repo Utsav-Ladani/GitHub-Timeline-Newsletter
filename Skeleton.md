@@ -2,8 +2,13 @@
 ├── README.md
 ├── Skeleton.md
 ├── cron.txt
+├── cron_email_sender.log
 ├── cron_jobs
 │   └── email_sender.php
+├── images
+│   ├── Home.webp
+│   ├── Unsubscribe.webp
+│   └── Verify.webp
 ├── includes
 │   ├── DBConnection.class.php
 │   ├── DataFetcher.class.php

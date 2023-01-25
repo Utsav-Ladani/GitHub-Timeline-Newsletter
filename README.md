@@ -2,7 +2,13 @@
 
 This is a GitHub timeline newsletter. Anyone can subscribe this newsletter and will get latest update of GitHub timeline after every 5 minutes. 
 
+## Screenshots
 
+<div>
+    <img src="./images/Home.webp" width="400px">
+    <img src="./images/Verify.webp" width="400px">
+    <img src="./images/Unsubscribe.webp" width="400px">
+</div>
 
 ## Tools and Requirements
 
@@ -72,8 +78,13 @@ This is a GitHub timeline newsletter. Anyone can subscribe this newsletter and w
 ├── README.md
 ├── Skeleton.md
 ├── cron.txt
+├── cron_email_sender.log
 ├── cron_jobs
 │   └── email_sender.php
+├── images
+│   ├── Home.webp
+│   ├── Unsubscribe.webp
+│   └── Verify.webp
 ├── includes
 │   ├── DBConnection.class.php
 │   ├── DataFetcher.class.php
