@@ -17,6 +17,7 @@ services:
     run_as_root:
       - service cron start
     run:
+      - php /app/scripts/init.php >> /app/init.log 2>&1
       - crontab /app/cron.txt
   database:
     volumes:

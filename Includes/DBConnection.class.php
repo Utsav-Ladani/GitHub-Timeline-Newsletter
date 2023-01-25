@@ -24,7 +24,7 @@ class DBConnection {
             $this->db = $conn;
 
             // checking table is created or not using code is bad idea, but it is for testing purpose only.
-            $this->create_table();
+            // $this->create_table();
             // $this->truncate_table(); // truncate the table, if want.
         }
 
@@ -138,7 +138,7 @@ class DBConnection {
     /**
      * @description Create User table if not exist in database
      */
-    private function create_table() {
+    public function create_table() {
         $sql = "CREATE TABLE IF NOT EXISTS User ( 
             Name VARCHAR(100) NOT NULL, 
             Email VARCHAR(200) NOT NULL PRIMARY KEY,
@@ -146,6 +146,8 @@ class DBConnection {
             Token VARCHAR(100)
             );";
         $result = $this->db->query($sql);
+
+        return !$this->db->errno;
     }
 
     /**
