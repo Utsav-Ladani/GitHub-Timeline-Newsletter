@@ -51,6 +51,7 @@ This is a GitHub timeline newsletter. Anyone can subscribe this newsletter and w
     - [x] Database Connection
     - [x] Subscribe
     - [x] Token verification
+    - [x] Add my own hashing
     - [x] Unsubscribe
     - [x] Fetch GitHub timeline latest update
     - [x] Cron job to send emails
@@ -66,10 +67,6 @@ This is a GitHub timeline newsletter. Anyone can subscribe this newsletter and w
     - [x] Add namespace
     - [x] Write documentation
     - [x] Add GitHub stylesheets in email template
-
-- [ ] Future work (suggestions)
-    - [ ] Send token with hashing
-    - [ ] Create new module for validation
 
 ## Skeleton
 
