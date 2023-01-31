@@ -125,5 +125,3 @@ class Subscriber extends \DBConn\DBConnection {
         return mail($email, $subject, $message);
     }
 }
-
-?>

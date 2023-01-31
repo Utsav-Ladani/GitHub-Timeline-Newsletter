@@ -127,5 +127,3 @@ class EmailSender extends \DBConn\DBConnection {
         return "";
     }
 }
-
-?>

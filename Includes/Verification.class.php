@@ -78,5 +78,3 @@ class Verification extends \DBConn\DBConnection{
         return "";
     }
 }
-
-?>

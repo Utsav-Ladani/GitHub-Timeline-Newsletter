@@ -24,7 +24,8 @@ body {
     background-position: center;
 }
 
-.error, .success {
+.error,
+.success {
     height: fit-content;
     padding: 10px 20px;
     color: white;

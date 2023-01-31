@@ -19,5 +19,3 @@ if($result) {
 else {
     echo "Failed to create table.";
 }
-
-?>

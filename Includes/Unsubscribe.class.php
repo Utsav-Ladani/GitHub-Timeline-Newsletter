@@ -74,5 +74,3 @@ class Unsubscriber extends \DBConn\DBConnection {
         return "";
     }
 }
-
-?>
