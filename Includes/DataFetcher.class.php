@@ -1,9 +1,10 @@
 <?php
-namespace DataFetcher;
 
 /**
- * Fetch data from githic.om/timeline and convert it into json format
+ * DataFetcher downloads data from github.com/timeline and convert it into json format
  */
+
+namespace DataFetcher;
 
 class DataFetcher {
 

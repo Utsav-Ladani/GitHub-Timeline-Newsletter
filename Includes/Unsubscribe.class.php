@@ -1,11 +1,12 @@
 <?php
+/**
+ * This class is used to unsunscribe user from GitHub timeline newsletter
+ * User account is removed from database after unsubscribe.
+ */
+
 namespace Unsubscribe;
 
 require_once __DIR__.'/DBConnection.class.php';
-
-/**
- * @description This class is used to unsunscribe user from GitHub timeline newsletter
- */
 
 class Unsubscriber extends \DBConn\DBConnection {
     const TOKEN_LEN = 40;

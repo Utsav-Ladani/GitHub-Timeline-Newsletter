@@ -1,12 +1,14 @@
 <?php
+/**
+ * Send email to every subscriber
+ * Email contains the latest github timeline update
+ */
+
 namespace EmailSender;
 
 require_once __DIR__.'/DataFetcher.class.php';
 require_once __DIR__.'/DBConnection.class.php';
 
-/**
- * Send email to every subscriber
- */
 class EmailSender extends \DBConn\DBConnection {
     private $data = NULL;
     private $gh_template = "";

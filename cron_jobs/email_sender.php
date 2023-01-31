@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Script which create an object to send an email to every subscriber
+ * Email contains the latest github timeline update
+ */
+
 require_once '/app/includes/EmailSender.class.php';
 
 // send email to every user

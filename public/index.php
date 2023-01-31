@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Home page html code, which contains the subscribe form and logo.
+ */
+
 require_once __DIR__ . '/../includes/Subscribe.class.php';
 require_once __DIR__ . '/../includes/EmailSender.class.php';
 
@@ -20,9 +24,7 @@ if (isset($_POST['subscribe'])) {
 
 ?>
 
-<?php
-echo "";
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 

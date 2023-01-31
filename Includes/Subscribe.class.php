@@ -1,12 +1,13 @@
 <?php
+/**
+ * Subscribe the GitHub timeline newsletter
+ * Class contains various functions to validate input and store it in database.
+ */
+
 namespace Subscribe;
 
 require_once __DIR__.'/DBConnection.class.php';
 
-
-/**
- * @description Subscribe the GitHUb timeline newsletter
- */
 
 class Subscriber extends \DBConn\DBConnection {
 

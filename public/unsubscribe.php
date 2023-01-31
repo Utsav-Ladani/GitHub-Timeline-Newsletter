@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Unsubscribe page html code, which handles the unsubscribe request and show the log message 
+ */
+
 require_once __DIR__ . '/../includes/Unsubscribe.class.php';
 
 // init status variables

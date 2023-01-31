@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * This scripts run at startup.
+ * It creates the User table in database if not exist.
+ * Also log the success and error message.
+ */
+
 require_once __DIR__.'/../includes/DBConnection.class.php';
 
 $DB = new DBConn\DBConnection();

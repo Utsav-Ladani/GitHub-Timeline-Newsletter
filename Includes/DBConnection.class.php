@@ -1,10 +1,12 @@
 <?php
-namespace DBConn;
 
 /** 
  * DBConnection is used to create a database connection. It provides varoius data manipulation functions.
- * Here User database is used for all database transactions
+ * NOTE: Here User database is used for all database transactions
  */
+
+namespace DBConn;
+
 class DBConnection {
 
     private $hostname = "database";

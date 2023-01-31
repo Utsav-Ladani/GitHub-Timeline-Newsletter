@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Verify page html code, which handles the verification request and show the log message
+ */
+
 require_once __DIR__ . '/../includes/Verification.class.php';
 
 // init status variables
