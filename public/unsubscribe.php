@@ -17,7 +17,9 @@ $token = isset($_GET["token"]) ? $_GET["token"] : "";
 // unsubscribe if token and email match
 $unsubscriber = new Unsubscribe\Unsubscriber($email, $token);
 $error = $unsubscriber->error;
-$success = $error == "";
+
+// set the success status to false if error come, otherwise set it to true;
+$success = ($error == "");
 
 ?>
 
